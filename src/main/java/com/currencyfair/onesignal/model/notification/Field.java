@@ -93,7 +93,12 @@ public enum Field {
     /**
      * {@code value} = email address
      */
-    EMAIL("email");
+    EMAIL("email"),
+
+    /**
+     * {@code value} = device_type
+     */
+    DEVICE_TYPE("device_type");
 
     private final String value;
 
