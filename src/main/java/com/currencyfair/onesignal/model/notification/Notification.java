@@ -32,6 +32,11 @@ public class Notification {
      */
     private String id;
 
+    /**
+     * An internal name to assist with your campaign organization. This does not get displayed on the message itself.
+     */
+    private String name;
+
     // SEND TO SEGMENTS
     //
     // Segments are the most common way developers send notifications via OneSignal. Sending to segments is easy: you
@@ -56,16 +61,12 @@ public class Notification {
     @JsonProperty("excluded_segments")
     private List<String> excludedSegments;
 
-
-
     // SEND TO USERS BASED ON FILTERS
 
     /**
      * @see Filter
      */
     private List<Filter> filters;
-
-
 
     // SEND TO SPECIFIC DEVICES
     //
@@ -100,8 +101,6 @@ public class Notification {
     @JsonProperty("include_external_user_ids")
     private List<String> includeExternalUserIds;
 
-
-
     // COMMON PARAMETERS
     //
     // The following are parameters in Create Notifications common to all methods of targeting users.
@@ -128,8 +127,6 @@ public class Notification {
      */
     @JsonProperty("app_ids")
     private List<String> appIds;
-
-
 
     // CONTENT & LANGUAGE
     //
@@ -193,8 +190,6 @@ public class Notification {
      */
     @JsonProperty("mutable_content")
     private Boolean mutableContent;
-
-
 
     // ATTACHMENTS
     //
@@ -267,7 +262,7 @@ public class Notification {
 
     /**
      * The name the email is from.
-     * <p>  If this is not specified, this will use your default from 
+     * <p>  If this is not specified, this will use your default from
      * name set in Email Setup.
      */
     @JsonProperty("email_from_name")
@@ -275,14 +270,11 @@ public class Notification {
 
     /**
      * Valid email address.
-     * <p> The email address the email is from. If this is not specified, this will use your 
+     * <p> The email address the email is from. If this is not specified, this will use your
      * default from email in Email Setup.
      */
     @JsonProperty("email_from_address")
     private String emailFromAddress;
-
-
-
 
     // ACTION BUTTONS
     //
@@ -317,8 +309,6 @@ public class Notification {
      */
     @JsonProperty("ios_category")
     private String iosCategory;
-
-
 
     // APPEARANCE
     //
@@ -523,8 +513,6 @@ public class Notification {
     @JsonProperty("collapse_id")
     private String collapseId;
 
-
-
     // DELIVERY
 
     /**
@@ -578,8 +566,6 @@ public class Notification {
      */
     private Integer priority;
 
-
-
     // GROUPING & COLLAPSING
     //
     // Grouping lets you combine multiple notifications into a single notification to improve the user experience.
@@ -629,8 +615,6 @@ public class Notification {
      */
     @JsonProperty("adm_group_message")
     private Map<String, String> admGroupMessage;
-
-
 
     // PLATFORM TO DELIVER TO
     //
@@ -1255,5 +1239,13 @@ public class Notification {
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
